@@ -40,11 +40,6 @@ async def calculator_text(message: Message, state: FSMContext):
     except NameError:
         await message.answer('Ошибка ввода, попробуйте ещё раз!')
 
-# @router.callback_query(F.data == 't-shirt')
-# async def t_shirt(callback: CallbackQuery):
-#     await callback.answer('Вы выбрали футболку',show_alert=True)
-#     await callback.message.answer('Вы выбрали футболку')
-
 @router.message(Command('register'))
 async def register(message: Message, state: FSMContext):
     await state.set_state(Register.name)
